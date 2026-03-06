@@ -27,8 +27,9 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
-.header{position:sticky;top:0;z-index:100;background:var(--navy)}
-.header-bar{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#1a1a2e;position:sticky;top:0;z-index:100}
+.header-logo{display:flex;align-items:center;gap:10px}
+.header-logo img{height:40px;width:auto}
 .logo{display:flex;align-items:center;gap:10px;color:var(--white)}
 .logo-mark{font-size:22px;width:38px;height:38px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center}
 .logo-name{font-family:var(--font-h);font-weight:700;font-size:16px;line-height:1.2}
@@ -38,12 +39,12 @@ ul{list-style:none}
 .nav-link:hover,.nav-link.open{color:#fff;background:rgba(255,255,255,0.08)}
 .nav-link .arrow{font-size:10px;transition:transform 0.2s}
 .nav-link.open .arrow{transform:rotate(180deg)}
+.call-btn{display:inline-flex;align-items:center;gap:6px;background:#6b21a8;color:white;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap;border:none;cursor:pointer;transition:0.15s}
+.call-btn:hover{background:#5a2d8c}
+.call-btn svg{width:14px;height:14px}
 .hdr-right{display:flex;align-items:center;gap:14px}
 .hdr-phone{color:rgba(255,255,255,0.85);font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px}
 .hdr-phone svg{width:15px;height:15px}
-.btn-call{background:var(--accent);color:#fff;font-size:13px;font-weight:600;padding:8px 18px;border-radius:var(--radius);display:flex;align-items:center;gap:6px;transition:0.15s;border:none;cursor:pointer}
-.btn-call:hover{background:var(--accent-hover)}
-.btn-call svg{width:14px;height:14px}
 
 .dropdown-wrap{position:relative}
 .mega{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%);background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:1px solid var(--border);padding:24px 28px;min-width:520px;opacity:0;visibility:hidden;transition:opacity 0.15s,visibility 0.15s;z-index:200}
@@ -194,19 +195,9 @@ textarea{resize:vertical;min-height:80px}
 .footer-bottom a:hover{color:rgba(255,255,255,0.6)}
 .footer-disc{font-size:11px;color:rgba(255,255,255,0.25);margin-top:12px;line-height:1.6;max-width:800px}
 
-.mob-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;padding:6px}
-.mob-toggle svg{width:22px;height:22px}
-.mob-nav{display:none;position:fixed;inset:0;background:var(--navy);z-index:300;padding:20px;overflow-y:auto}
-.mob-nav.show{display:block}
-.mob-nav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
-.mob-close{background:none;border:none;color:#fff;cursor:pointer;padding:6px}
-.mob-close svg{width:22px;height:22px}
-.mob-nav a{display:block;padding:14px 0;font-size:17px;font-weight:600;color:#fff;border-bottom:1px solid rgba(255,255,255,0.06)}
-.mob-nav .mob-services a{font-size:14px;font-weight:500;color:rgba(255,255,255,0.65);padding:9px 0;border:none}
 
 @media(max-width:900px){
-  .nav,.hdr-phone{display:none}
-  .mob-toggle{display:block}
+  .nav{display:none}
   .mega{display:none!important}
   .svc-grid{grid-template-columns:1fr 1fr}
   .about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
@@ -217,12 +208,17 @@ textarea{resize:vertical;min-height:80px}
   .hero h1{font-size:28px}
   .section{padding:32px 20px}
   .phone-fab{display:flex}
+  .call-btn{display:inline-flex}
 }
 @media(max-width:600px){
   .svc-grid,.reviews-grid{grid-template-columns:1fr}
   .areas-grid{grid-template-columns:1fr 1fr}
   .trust-bar-inner{flex-direction:column;align-items:flex-start;gap:6px}
   .about-stats{grid-template-columns:1fr 1fr}
+  .call-btn{padding:6px 12px;font-size:12px}
+  .call-btn svg{width:12px;height:12px}
+  .hdr-right{gap:8px}
+  .hdr-phone{display:none}
 }
 .phone-fab{position:fixed;bottom:24px;right:24px;z-index:99;display:none;align-items:center;justify-content:center;width:56px;height:56px;background:var(--accent);color:#fff;border-radius:50%;box-shadow:0 4px 20px rgba(108,63,160,0.4);transition:0.2s;cursor:pointer;text-decoration:none}
 .phone-fab:hover{background:var(--accent-hover);transform:scale(1.05);box-shadow:0 6px 24px rgba(108,63,160,0.5)}
@@ -232,17 +228,18 @@ textarea{resize:vertical;min-height:80px}
 <body>
 
 <header class="header">
-  <div class="header-bar">
+  <div class="header-logo">
     <a href="../index.html" class="logo">
       <div class="logo-mark">💧</div>
       <div class="logo-name">Hull Plumbing Solutions<small>Fast, Reliable Plumbing for Hull Homes</small></div>
     </a>
-    <nav class="nav">
-      <div class="dropdown-wrap" id="ddWrap">
-        <div class="nav-link" id="ddTrigger">Services <span class="arrow">▾</span></div>
-        <div class="mega" id="ddMenu">
-          <h4>Our Services</h4>
-          <div class="mega-grid"><a href="../emergency-plumbing.html" class="mega-link">Emergency Plumber <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
+  </div>
+  <nav class="nav">
+    <div class="dropdown-wrap" id="ddWrap">
+      <div class="nav-link" id="ddTrigger">Services <span class="arrow">▾</span></div>
+      <div class="mega" id="ddMenu">
+        <h4>Our Services</h4>
+        <div class="mega-grid"><a href="../emergency-plumbing.html" class="mega-link">Emergency Plumber <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
 <a href="../blocked-drains.html" class="mega-link">Blocked Drains <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
 <a href="../tap-toilet-repairs.html" class="mega-link">Tap &amp; Toilet Repairs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
 <a href="../general-plumbing.html" class="mega-link">General Plumbing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
@@ -251,18 +248,13 @@ textarea{resize:vertical;min-height:80px}
 <a href="../radiators-heating.html" class="mega-link">Radiators &amp; Heating <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></a>
 <a href="../services.html" class="mega-link" style="color:var(--accent);font-weight:600;margin-top:4px">View all services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
 </div>
-        </div>
       </div>
-      <a href="../about.html" class="nav-link">About</a>
-      <a href="../areas.html" class="nav-link">Areas</a>
-      <a href="../index.html#contact" class="nav-link">Contact</a>
-    </nav>
-    <div class="hdr-right">
-      <a href="tel:01482770041" class="hdr-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> Call us on 01482 770 041</a>
-      <a href="tel:01482770041" class="btn-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> Call us</a>
     </div>
-    <button class="mob-toggle" onclick="document.getElementById('mobNav').classList.add('show');document.body.style.overflow='hidden'" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
-  </div>
+    <a href="../about.html" class="nav-link">About</a>
+    <a href="../areas.html" class="nav-link">Areas</a>
+    <a href="../index.html#contact" class="nav-link">Contact</a>
+  </nav>
+  <a href="tel:01482770041" class="call-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> Call now</a>
 </header>
 
 <div class="trust-bar">
@@ -289,29 +281,34 @@ textarea{resize:vertical;min-height:80px}
       <h1 style="font-family:var(--font-h);font-size:clamp(24px,3.5vw,36px);font-weight:800;line-height:1.2;margin-bottom:16px">What to Do When a Pipe Bursts in Your Hull Home</h1>
       <p style="font-size:17px;color:var(--text);line-height:1.7;margin-bottom:28px">A burst pipe can cause serious flooding and water damage. Here&#x27;s exactly what to do in the first few minutes, and how to prevent it happening again.</p>
       <h2>Why burst pipes are so common in Hull</h2>
+<img src="https://images.pexels.com/photos/8146325/pexels-photo-8146325.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="Why burst pipes are so common in Hull" style="width:100%;max-width:720px;height:auto;border-radius:8px;margin:20px 0" loading="lazy">
 <p>Hull&#x27;s housing stock makes burst pipes more common than you&#x27;d think. The city has thousands of Victorian and Edwardian terraced houses with original lead or iron pipework. Add in Hull&#x27;s coastal climate, frost in winter, ground movement from clay soil, and you&#x27;ve got a perfect recipe for pipe failures.</p>
 <p>Modern homes aren&#x27;t immune either. New builds in areas like Kingswood often use plastic push-fit pipes that can fail at the joints if they weren&#x27;t fitted correctly. We see burst pipes in homes less than 10 years old because a joint wasn&#x27;t secured properly during construction.</p>
 <p>The worst burst pipes happen in winter. Water expands when it freezes, and if a pipe is already weakened by corrosion or poor installation, that expansion cracks it. Then when the ice thaws, water floods out. We get dozens of callouts every January and February for this exact problem.</p>
 <p>The clay soil in Hull causes ground movement that stresses underground pipes. As the soil shrinks in dry weather and swells when wet, it shifts pipes and creates weak points. Over years, this movement causes hairline cracks that eventually fail when water freezes inside the pipe.</p>
 <h2>First steps when you discover a burst pipe</h2>
+<img src="https://images.pexels.com/photos/14953886/pexels-photo-14953886.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="First steps when you discover a burst pipe" style="width:100%;max-width:720px;height:auto;border-radius:8px;margin:20px 0" loading="lazy">
 <p>Your first action should always be turning off the water supply at the stopcock. In most Hull homes, it&#x27;s under the kitchen sink or in the cupboard under the stairs. Turn it clockwise until it won&#x27;t turn anymore. This stops more water flooding your property.</p>
 <p>Next, turn off your central heating and immersion heater. Hot water pipes can continue pumping water even after you&#x27;ve closed the stopcock if the heating system is still running. Switch off the boiler and any electric immersion heaters immediately.</p>
 <p>Now you need to drain the system. Turn on all cold taps to empty the pipes between the stopcock and the taps. Then turn on hot taps to drain the hot water cylinder. Flush toilets to empty cisterns. This reduces the amount of water that can leak from the burst section.</p>
 <p>If the burst pipe is in the loft or ceiling and water is coming through, turn off electrics in that area at the fuse box. Water and electricity is a dangerous combination. Don&#x27;t go back into the room until you&#x27;re sure it&#x27;s safe.</p>
 <p>While you&#x27;re securing the area, take a moment to locate your water meter if you have one. You can watch it to confirm the water has stopped flowing after you&#x27;ve closed the stopcock. If the meter is still spinning after closing the stopcock, the burst is on the mains side and Yorkshire Water needs to attend.</p>
 <h2>How to minimize water damage while waiting for help</h2>
+<img src="https://images.pexels.com/photos/34295401/pexels-photo-34295401.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="How to minimize water damage while waiting for help" style="width:100%;max-width:720px;height:auto;border-radius:8px;margin:20px 0" loading="lazy">
 <p>Once you&#x27;ve stopped the water supply, start damage limitation. Move furniture, electronics, and valuables away from the leak. Even a small burst pipe can dump 400+ litres of water into your home if it&#x27;s been running for an hour.</p>
 <p>Catch dripping water in buckets, bowls, or towels. If water is coming through a ceiling, poke a small hole in the bulge with a screwdriver to let water drain in a controlled way rather than spreading across the ceiling and causing more damage. Sounds counterintuitive, but it works.</p>
 <p>If you&#x27;ve got carpet soaked, pull it back from the edges if you can and lift it away from the underlay. This helps it dry faster and might save the carpet. Laminate and wood floors should be mopped up immediately to prevent warping and swelling.</p>
 <p>Open windows to increase ventilation even if it&#x27;s cold outside. Moving air helps dry things out faster. Use fans if you have them. Take photos of all damage for your insurance claim later.</p>
 <p>For carpets and upholstery, use towels to absorb as much water as possible by pressing down firmly. Don&#x27;t rub, as that pushes water deeper into fibres. Once you&#x27;ve absorbed the surface water, prop furniture up on blocks or tin foil to prevent water wicking up the legs and causing more damage.</p>
 <h2>When to call an emergency plumber in Hull</h2>
+<img src="https://images.unsplash.com/photo-1603532648955-039a19472a12?w=1200&amp;h=600&amp;fit=crop&amp;q=80" alt="When to call an emergency plumber in Hull" style="width:100%;max-width:720px;height:auto;border-radius:8px;margin:20px 0" loading="lazy">
 <p>If you can&#x27;t find the stopcock, can&#x27;t turn it off, or water is still flooding in despite turning it off, call an emergency plumber immediately. We&#x27;ll get to you fast, usually within 2 hours across Hull and East Yorkshire.</p>
 <p>If the burst is on the mains supply side of your stopcock, you can&#x27;t stop it yourself. Yorkshire Water is responsible for the pipe up to your property boundary, but they can take hours to respond. We&#x27;ll cap off your internal supply so you&#x27;re not without water while waiting for them.</p>
 <p>Complex bursts, like pipes inside walls or under floors, need professional attention. Trying to access them yourself often causes more damage than the leak itself. We&#x27;ve got the tools and experience to open up walls, fix the pipe, and make good afterward.</p>
 <p>If water is near electrics, don&#x27;t attempt the repair yourself. Call us and also call an electrician if needed. Safety first, always.</p>
 <p>Don&#x27;t wait until the next day if a burst happens in the evening. Water damage gets exponentially worse the longer it sits. What might be a £500 repair if fixed within hours becomes a £2,000+ insurance claim involving ceiling replacements, floor drying, and potential mould remediation if left overnight.</p>
 <h2>How we repair burst pipes in Hull homes</h2>
+<img src="https://images.pexels.com/photos/8146325/pexels-photo-8146325.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" alt="How we repair burst pipes in Hull homes" style="width:100%;max-width:720px;height:auto;border-radius:8px;margin:20px 0" loading="lazy">
 <p>The repair method depends on the pipe type and location. For copper pipes, we usually cut out the damaged section and solder in a new piece. Takes about 30-45 minutes for a straightforward repair.</p>
 <p>For plastic pipes, we cut out the burst section and use compression fittings to join in a replacement. No heat needed, and it&#x27;s just as reliable as soldering copper. Sometimes we&#x27;ll replace a whole run if the pipe is old and likely to fail elsewhere soon.</p>
 <p>Lead pipes need replacing entirely. You can&#x27;t reliably repair lead pipework, and if one section has burst, the rest isn&#x27;t far behind. We&#x27;ll replace the lead section with copper, which is what water regulations require anyway.</p>
@@ -324,6 +321,7 @@ textarea{resize:vertical;min-height:80px}
 <p>Get old pipes inspected if you&#x27;re in a pre-1970 house. Original lead or iron pipes will fail eventually. Better to replace them on your schedule than at 2am when they burst and flood your kitchen.</p>
 <p>Hull City Council offers hardship grants for essential repairs like burst pipes if you&#x27;re a homeowner on low income and don&#x27;t have savings to cover emergency plumbing. Contact them directly to see if you qualify. The grant isn&#x27;t a loan, you don&#x27;t have to pay it back, but you must provide proof of income and that the repair is essential.</p>
 <h2>Insurance claims for burst pipe damage</h2>
+<img src="https://images.unsplash.com/photo-1628744876497-eb30460be9f6?w=1200&amp;h=600&amp;fit=crop&amp;q=80" alt="Insurance claims for burst pipe damage" style="width:100%;max-width:720px;height:auto;border-radius:8px;margin:20px 0" loading="lazy">
 <p>Most home insurance policies cover sudden and accidental damage from burst pipes. That includes water damage to floors, ceilings, furniture, and belongings. But they don&#x27;t cover the pipe repair itself, that&#x27;s considered maintenance. Check your policy wording, as some exclude gradual damage from slow leaks.</p>
 <p>Document everything for your claim. Take photos of the burst pipe, the water damage, and affected items. Keep receipts for emergency plumbing callouts, dehumidifier hire, and temporary accommodation if you can&#x27;t stay in the house. Insurance companies want proof of damage and costs.</p>
 <p>Report the claim as soon as possible, ideally within 24 hours. Most insurers have 24-hour claims lines. They&#x27;ll ask what happened, when, and what damage was caused. Be honest. If you discover later that the burst was caused by neglect, like uninsulated pipes in a loft you knew were uninsulated, they might refuse the claim.</p>
