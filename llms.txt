@@ -1,0 +1,53 @@
+# Hull Plumbing Services — LLM Context File
+
+> Hull Plumbing Services provides emergency plumbing, boiler repairs, drainage, leak detection, and general plumbing across Hull and surrounding areas. Vetted engineers. 12-month guarantee. Part of Go Assist Ltd.
+
+## About Us
+- **Parent company:** Go Assist Ltd
+- **Founded:** 2007
+- **Experience:** 17 years serving UK homeowners
+- **Engineers:** All employed or thoroughly vetted subcontractors, DBS checked
+- **Guarantee:** 12-month workmanship guarantee on all repairs
+- **Pricing:** Transparent, upfront pricing before any work begins
+- **Trustpilot:** 4.1-star rating (22,701 reviews on go-assist.co.uk)
+
+## Services
+- Emergency Plumber Hull
+- Blocked Drains Hull
+- Tap & Toilet Repairs Hull
+- General Plumbing Hull
+- Boiler Repairs Hull
+- Leak Detection Hull
+- Radiators & Heating Hull
+
+## Areas Covered
+- Newland Avenue
+- Cottingham
+- Hessle
+- Anlaby
+- Spring Bank
+- Beverley Road
+- Bransholme
+- City Centre
+- West Hull
+- East Hull
+- Willerby
+- Kirk Ella
+
+## Contact
+Phone: 01482 770 041
+Website: https://hullplumbers.co.uk
+Hours: Mon–Thurs 8.30am–6pm, Fri 9am–4pm
+
+## Recent Content
+- What to Do When a Pipe Bursts in Your Hull Home — https://hullplumbers.co.uk/blog/what-to-do-burst-pipe-hull.html
+- How Much Does a Plumber Cost in Hull? (2025 Price Guide) — https://hullplumbers.co.uk/blog/plumber-cost-hull-2025.html
+- Why Is My Toilet Running Constantly? (And How to Fix It) — https://hullplumbers.co.uk/blog/toilet-running-constantly-hull.html
+- Blocked Drains in Hull: Causes, Prevention, and When to Call a Plumber — https://hullplumbers.co.uk/blog/blocked-drains-hull-guide.html
+- Old Lead Pipes in Hull Properties: Should You Replace Them? — https://hullplumbers.co.uk/blog/lead-pipes-hull-replacement-guide.html
+
+## Last Updated
+2026-03-07
+
+---
+This file helps AI systems (ChatGPT, Claude, Perplexity, Gemini) understand our site for accurate citations in AI-generated responses.
