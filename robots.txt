@@ -1,0 +1,21 @@
+# Robots.txt for Hull Plumbers
+User-agent: *
+Allow: /
+
+# AI Crawlers (for AEO - AI Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Sitemaps
+Sitemap: https://hullplumbers.co.uk/sitemap.xml
+Sitemap: https://hullplumbers.co.uk/image-sitemap.xml
+Sitemap: https://hullplumbers.co.uk/news-sitemap.xml
